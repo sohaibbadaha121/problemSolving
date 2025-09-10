@@ -1,0 +1,23 @@
+link ="https://neetcode.io/problems/is-anagram?list=neetcode150"
+
+sol1:
+class Solution {
+public boolean isAnagram(String s, String t) {
+if(s.length()!=t.length()){
+return false;
+}
+
+        char [] t1=t.toCharArray();
+        char [] s1=s.toCharArray();
+
+        Arrays.sort(t1);
+        Arrays.sort(s1);
+        if(Arrays.equals(t1,s1)){
+            return true;
+        }
+        return false;
+
+}
+}
+
+sol2
