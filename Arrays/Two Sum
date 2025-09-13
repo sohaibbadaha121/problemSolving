@@ -1,0 +1,40 @@
+Two Sum
+link:"https://neetcode.io/problems/two-integer-sum?list=neetcode150"
+
+sol1:
+class Solution {
+public int[] twoSum(int[] nums, int target) {
+for(int i=0;i<nums.length;i++){
+for(int j=i+1;j<nums.length;j++){
+if(nums[i]+nums[j]==target){
+return new int[]{i,j};
+}
+
+            }
+
+
+        }
+        return new int[0];
+    }
+
+}
+
+sol2:
+class Solution {
+public int[] twoSum(int[] nums, int target) {
+HashMap<Integer,Integer> mymap=new HashMap<>();
+for (int i=0;i<nums.length;i++){
+int d=target-nums[i];
+if(mymap.containsKey(d)){
+return new int[]{mymap.get(d),i};
+}
+
+            mymap.put(nums[i],i);
+
+        }
+
+    return new int[]{};
+
+
+}
+}
