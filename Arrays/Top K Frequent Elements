@@ -1,0 +1,23 @@
+Top K Frequent Elements
+
+class Solution {
+    public int[] topKFrequent(int[] nums, int k) {
+        Map<Integer,Integer> map=new HashMap<>();
+        for( int number:nums){
+            map.put(number,map.getOrDefault(number,0) +1);
+        }
+        List<int[]> arrforsort = new ArrayList<>();
+        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+            arrforsort.add(new int[] {entry.getKey(),entry.getValue()});
+        }
+        arrforsort.sort((a,b) -> b[0]- a[0]);
+
+        int [] result =new int[k];
+        for(int i=0; i<k ;i++){
+            result[i] = arrforsort.get(i)[0];
+        }
+
+        return result;
+
+    }
+}
